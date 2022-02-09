@@ -1,0 +1,23 @@
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 40%;
+
+    @media screen and (min-width: 768px) {
+        font-size: 50%;
+    }
+
+    @media screen and (min-width: 1024px) {
+        font-size: 62.5%;
+    }
+
+    @media screen and (min-width: 1440px) {
+        font-size: 75%;
+    }
+}
+
+body {
+    box-sizing: border-box;
+}
