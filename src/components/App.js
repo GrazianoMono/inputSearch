@@ -1,8 +1,7 @@
-import react, { useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import React, { useEffect, useState } from "react";
 import "../scss/App.scss";
 import InputSearchList from "./InputSearchList";
-import { uniqueNamesGenerator, Config, names } from "unique-names-generator";
+import { uniqueNamesGenerator, names } from "unique-names-generator";
 
 function App() {
     const [list, setList] = useState([]);
@@ -34,6 +33,7 @@ function App() {
         }
         const queryResults = list.filter((el) => {
             if (el.includes(query)) return el;
+            return null
         });
         console.log(queryResults.slice(0, 9))
         setResults(queryResults.slice(0, 9));

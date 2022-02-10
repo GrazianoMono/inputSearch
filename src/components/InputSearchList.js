@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import ReactDom from "react-dom";
+import React from "react";
 import PropTypes from "prop-types";
 import SearchIcon from "../assets/images/search.svg";
 import "../scss/InputSearchList.scss";
