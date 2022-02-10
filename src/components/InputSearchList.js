@@ -5,22 +5,6 @@ import SearchIcon from "../assets/images/search.svg";
 import "../scss/InputSearchList.scss";
 
 function InputSearchList({ placeHolder, onInput, results }) {
-    function showResults() {
-        const resultsList = [];
-        for (const result of results) {
-            const li = <li key={result}>{result}</li>;
-            resultsList.push(li);
-        }
-        ReactDom.render(
-            resultsList,
-            document.getElementById("search-results-list")
-        );
-    }
-
-    useEffect(() => {
-        showResults();
-    });
-
     return (
         <div className="input-search-list">
             <div className="search-form">
@@ -37,10 +21,11 @@ function InputSearchList({ placeHolder, onInput, results }) {
                 />
             </div>
             <div className="search-results">
-                <ul
-                    id="search-results-list"
-                    className="search-results__list"
-                ></ul>
+                <ul id="search-results-list" className="search-results__list">
+                    {results.map((el) => {
+                        return <li key={el}>{el}</li>;
+                    })}
+                </ul>
             </div>
         </div>
     );
